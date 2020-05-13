@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Flask Note form</title>
+        <link rel="stylesheet" href="static/main.css">
+    </head>
+    <body class="note">
+        <h2>Flask Note form</h2>
+
+        <form action="/note" method="post">
+            <label id="label" for="note-input">Note:</label>
+            <textarea id="note-input" name="note" rows="4" cols="50"></textarea>
+
+
+            <!-- Let's allow the user to submit the form. -->
+            <button class="submit-btn" type="submit">Save note!</button>
+            <button type="reset" class="submit-btn">Reset</button>
+
+        </form>
+    </body>
+</html>
