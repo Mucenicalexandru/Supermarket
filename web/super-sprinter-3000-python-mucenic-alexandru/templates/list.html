@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/main.css">
+    <title>Document</title>
+</head>
+<body>
+<h1> Super Sprinter 3000</h1>
+
+<a href="/story">Add new story</a>
+
+<table>
+    <thead>
+            <tr>
+                {% for name in header %}
+                <th>
+                    {{name}}
+                </th>
+                {% endfor %}
+            </tr>
+    </thead>
+
+    <tbody>
+    {% for dictionary in user_stories %}
+        <tr>
+            {% for name in dictionary %}
+                {% if name == 'title' %}
+                    <td><a href="{{ url_for('update_story', post_id=dictionary['id']) }}">{{ dictionary[name] }}</a></td>
+                {% else %}
+                    <td>{{ dictionary[name] }}</td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+
+</body>
+</html>
+
